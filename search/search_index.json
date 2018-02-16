@@ -1,38 +1,38 @@
 {
     "docs": [
         {
-            "location": "/", 
-            "text": "Install Tectonic on Google Cloud Platform with Terraform\n\n\nUse this guide to manually install a Rancher HA cluster on a GCP account.\n\n\nGetting Started\n\n\nFirst, clone the Terraform Rancher repository:\n\n\ngit clone https://github.com/design4pro/terraform-rancher.git\n\ncd\n terraform-rancher\n\n\n\n\nInitialise Terraform:\n\n\nterraform init platforms/gcp\n\n\n\n\nConfigure your GCP credentials. See the \nTerraform Google provider\n docs for details.\n\n\nexport\n \nGOOGLE_APPLICATION_CREDENTIALS\n=\n~/.gcp/my-credentials.json\n\n\n\n\nCustomize the deployment\n\n\nCustomizations to the base installation live in examples/terraform.tfvars.gcp. Export a variable that will be your cluster identifier:\n\n\nexport\n \nCLUSTER\n=\nmy-cluster\n\nexport\n \nGOOGLE_PROJECT\n=\nmy-project-id\n\n\n\n\nCreate a build directory to hold your customizations and copy the example file into it:\n\n\nmkdir -p build/\n${\nCLUSTER\n}\n\ncp examples/terraform.tfvars.gcp build/\n${\nCLUSTER\n}\n/terraform.tfvars\n\n\n\n\nEdit the parameters with your GCP details: project id, domain name, etc. \nView all of the GCP specific options\n and the common \nRancher variables\n).\n\n\nDeploy the cluster\n\n\nTest out the plan before deploying everything:\n\n\nterraform plan -var-file\n=\nbuild/\n${\nCLUSTER\n}\n/terraform.tfvars platforms/gcp\n\n\n\n\nNext, deploy the cluster:\n\n\nterraform apply -var-file\n=\nbuild/\n${\nCLUSTER\n}\n/terraform.tfvars platforms/gcp\n\n\n\n\nThis should run for a little bit, and when complete, your Rancher HA cluster should be ready.", 
+            "location": "/",
+            "text": "Install Tectonic on Google Cloud Platform with Terraform\n\u00b6\n\n\nUse this guide to manually install a Rancher HA cluster on a GCP account.\n\n\nGetting Started\n\u00b6\n\n\nFirst, clone the Terraform Rancher repository:\n\n\ngit clone https://github.com/design4pro/terraform-rancher.git\n\ncd\n terraform-rancher\n\n\n\n\nInitialise Terraform:\n\n\nterraform init platforms/gcp\n\n\n\n\nConfigure your GCP credentials. See the \nTerraform Google provider\n docs for details.\n\n\nexport\n \nGOOGLE_APPLICATION_CREDENTIALS\n=\n~/.gcp/my-credentials.json\n\n\n\n\nCustomize the deployment\n\u00b6\n\n\nCustomizations to the base installation live in examples/terraform.tfvars.gcp. Export a variable that will be your cluster identifier:\n\n\nexport\n \nCLUSTER\n=\nmy-cluster\n\nexport\n \nGOOGLE_PROJECT\n=\nmy-project-id\n\n\n\n\nCreate a build directory to hold your customizations and copy the example file into it:\n\n\nmkdir -p build/\n${\nCLUSTER\n}\n\ncp examples/terraform.tfvars.gcp build/\n${\nCLUSTER\n}\n/terraform.tfvars\n\n\n\n\nEdit the parameters with your GCP details: project id, domain name, etc. \nView all of the GCP specific options\n and the common \nRancher variables\n).\n\n\nDeploy the cluster\n\u00b6\n\n\nTest out the plan before deploying everything:\n\n\nterraform plan -var-file\n=\nbuild/\n${\nCLUSTER\n}\n/terraform.tfvars platforms/gcp\n\n\n\n\nNext, deploy the cluster:\n\n\nterraform apply -var-file\n=\nbuild/\n${\nCLUSTER\n}\n/terraform.tfvars platforms/gcp\n\n\n\n\nThis should run for a little bit, and when complete, your Rancher HA cluster should be ready.",
             "title": "Install"
-        }, 
+        },
         {
-            "location": "/#install-tectonic-on-google-cloud-platform-with-terraform", 
-            "text": "Use this guide to manually install a Rancher HA cluster on a GCP account.", 
+            "location": "/#install-tectonic-on-google-cloud-platform-with-terraform",
+            "text": "Use this guide to manually install a Rancher HA cluster on a GCP account.",
             "title": "Install Tectonic on Google Cloud Platform with Terraform"
-        }, 
+        },
         {
-            "location": "/#getting-started", 
-            "text": "First, clone the Terraform Rancher repository:  git clone https://github.com/design4pro/terraform-rancher.git cd  terraform-rancher  Initialise Terraform:  terraform init platforms/gcp  Configure your GCP credentials. See the  Terraform Google provider  docs for details.  export   GOOGLE_APPLICATION_CREDENTIALS = ~/.gcp/my-credentials.json", 
+            "location": "/#getting-started",
+            "text": "First, clone the Terraform Rancher repository:  git clone https://github.com/design4pro/terraform-rancher.git cd  terraform-rancher  Initialise Terraform:  terraform init platforms/gcp  Configure your GCP credentials. See the  Terraform Google provider  docs for details.  export   GOOGLE_APPLICATION_CREDENTIALS = ~/.gcp/my-credentials.json",
             "title": "Getting Started"
-        }, 
+        },
         {
-            "location": "/#customize-the-deployment", 
-            "text": "Customizations to the base installation live in examples/terraform.tfvars.gcp. Export a variable that will be your cluster identifier:  export   CLUSTER = my-cluster export   GOOGLE_PROJECT = my-project-id  Create a build directory to hold your customizations and copy the example file into it:  mkdir -p build/ ${ CLUSTER } \ncp examples/terraform.tfvars.gcp build/ ${ CLUSTER } /terraform.tfvars  Edit the parameters with your GCP details: project id, domain name, etc.  View all of the GCP specific options  and the common  Rancher variables ).", 
+            "location": "/#customize-the-deployment",
+            "text": "Customizations to the base installation live in examples/terraform.tfvars.gcp. Export a variable that will be your cluster identifier:  export   CLUSTER = my-cluster export   GOOGLE_PROJECT = my-project-id  Create a build directory to hold your customizations and copy the example file into it:  mkdir -p build/ ${ CLUSTER } \ncp examples/terraform.tfvars.gcp build/ ${ CLUSTER } /terraform.tfvars  Edit the parameters with your GCP details: project id, domain name, etc.  View all of the GCP specific options  and the common  Rancher variables ).",
             "title": "Customize the deployment"
-        }, 
+        },
         {
-            "location": "/#deploy-the-cluster", 
-            "text": "Test out the plan before deploying everything:  terraform plan -var-file = build/ ${ CLUSTER } /terraform.tfvars platforms/gcp  Next, deploy the cluster:  terraform apply -var-file = build/ ${ CLUSTER } /terraform.tfvars platforms/gcp  This should run for a little bit, and when complete, your Rancher HA cluster should be ready.", 
+            "location": "/#deploy-the-cluster",
+            "text": "Test out the plan before deploying everything:  terraform plan -var-file = build/ ${ CLUSTER } /terraform.tfvars platforms/gcp  Next, deploy the cluster:  terraform apply -var-file = build/ ${ CLUSTER } /terraform.tfvars platforms/gcp  This should run for a little bit, and when complete, your Rancher HA cluster should be ready.",
             "title": "Deploy the cluster"
-        }, 
+        },
         {
-            "location": "/variables/", 
-            "text": "", 
+            "location": "/variables/",
+            "text": "",
             "title": "Rancher"
-        }, 
+        },
         {
-            "location": "/variables/gcp/", 
-            "text": "", 
+            "location": "/variables/gcp/",
+            "text": "",
             "title": "GCP"
         }
     ]
