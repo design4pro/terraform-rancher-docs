@@ -22,4 +22,5 @@ language: python
 branches:
   only:
     - master
+    - /^greenkeeper/.*$/
 script: bash ./gh-deploy.sh
